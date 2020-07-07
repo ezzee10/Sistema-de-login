@@ -36,7 +36,7 @@ input{
 
 .container{
     max-width: 500px;
-    margin: 0 auto;
+    margin: auto auto;
     border: 1px solid black;
 }
 
@@ -53,7 +53,7 @@ input{
     padding: 2rem;
     display: grid;
     grid-template-rows: repeat(4, 1fr);
-    grid-row-gap: 1rem;
+    grid-row-gap: 2rem;
 }
 
 .cell input{
@@ -101,34 +101,3 @@ input{
 .btn-submit{
     text-transform: uppercase;
 }
-
-.campo-footer{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
-
-/**NOTIFICACIONES**/
-.notificacion{
-  padding: 1rem 3rem;
-  opacity: 0;
-  transition: opacity 0.5s ease;
-  text-align: center;
-}
-
-.visible{
-    opacity: 1;
-}
-
-.good{
-    background-color: #28a745;
-    color: white;
-}
-
-.error{
-    background-color: #dc3545;
-    color: white;
-}
-
-
-

@@ -1,46 +1,26 @@
- <?php include 'registro.php'; ?>
+<?php include 'layouts/header.php'?>
 
- <!DOCTYPE html>
- <html lang="en">
+<main class="container">
 
- <head>
-     <meta charset="UTF-8">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <title>Login</title>
-     <link rel="stylesheet" href="styles/normalize.css">
-     <link rel="stylesheet" href="styles/styles.css">
- </head>
+    <form class="form" id="form">
+        <h1>Registrarse</h1>
 
- <body>
+        <div class="campo">
+            <input id="nickname" type="text" placeholder="Nombre de usuario">
+        </div>
+        <div class="campo">
+            <input id="email" type="email" placeholder="Correo">
+        </div>
+        <div class="campo">
+            <input id="password" type="password" placeholder="Contraseña">
+        </div>
+        <div class="campo">
+            <input id="password2" type="password" placeholder="Confirmar contraseña">
+        </div>
+        <div class="campo">
+            <button type="submit" class="btn btn-submit">Registrarse</button>
+        </div>
+    </form>
+</main>
 
-     <main class="container">
-         <div class="form">
-             <h1>Registro</h1>
-             <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
-                 <div class="campo">
-                     <input type="text" placeholder="Nombre de usuario" name="nickname">
-                     <span class="msg-error"><?php echo $nick_err; ?></span>
-                 </div>
-                 <div class="campo">
-                     <input type="email" placeholder="Correo" name="email">
-                     <span class="msg-error"><?php echo $email_err; ?></span>
-                 </div>
-                 <div class="campo">
-                     <input type="password" placeholder="Contraseña" name="password">
-                     <span class="msg-error"><?php echo $pass_err; ?></span>
-                 </div>
-                 <div class="campo">
-                     <input type="password" placeholder="Confirmar contraseña" name="password2">
-                 </div>
-                 <div class="campo">
-                     <div class="campo-footer">
-                         <input type="submit" value="registrarse"></input>
-                         <a href="index.php">Volver a iniciar sesión</a>
-                     </div>
-                 </div>
-             </form>
-         </div>
-     </main>
- </body>
-
- </html>
+<?php include 'layouts/footer.php'?>

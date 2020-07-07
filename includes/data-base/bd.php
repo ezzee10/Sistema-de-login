@@ -8,4 +8,4 @@ define('DB_NOMBRE', 'interface_login');
 
 $conn = new mysqli(DB_HOST, DB_USUARIO, DB_PASSWORD, DB_NOMBRE);
 
-//echo $conn->ping();
+echo $conn->ping();
