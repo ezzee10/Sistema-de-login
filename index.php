@@ -19,7 +19,9 @@
                 <button type="button" class="btn btn-start w-100">Iniciar sesión</button>
             </div>
             <div class="new-account">
-                <button type="button" class="btn btn-login w-100">Crear una cuenta</button>
+                <button type="submit" class="btn btn-login w-100">
+                    Crear una cuenta
+                </button>
             </div>
         </div>
         <div class="cell">
@@ -31,6 +33,7 @@
                 <a href="#">¿Olvidó la contraseña?</a>
             </div>
         </div>
+    </div>
     </div>
 </main>
 
