@@ -101,3 +101,19 @@ input{
 .btn-submit{
     text-transform: uppercase;
 }
+
+/**NOTIFICACION**/
+.notificacion{
+    padding: 2rem;
+    text-align: center;
+    font-size: 1.3rem;
+    color: white;
+}
+
+.error{
+    background-color: red;
+}
+
+.good{
+    background-color: green;
+}
