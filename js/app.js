@@ -34,8 +34,10 @@ const registrarUsuario = (datos) => {
         if (this.status === 200 && xhr.readyState == 4) {
             console.log(JSON.parse(xhr.responseText));
             const resultado = JSON.parse(xhr.responseText);
-            if (resultado.estado == 'ocupado') {
+            if (resultado.nick == 'ocupado') {
                 mostrarNotificacion("El nombre de usuario ya está en uso", "error");
+            } else if (resultado.correo == 'ocupado') {
+                mostrarNotificacion("El correo ya está en uso", "error");
             } else {
                 mostrarNotificacion("Usuario creado correctamente", "good");
             }
