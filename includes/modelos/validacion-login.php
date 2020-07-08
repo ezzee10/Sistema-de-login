@@ -1,7 +1,6 @@
 <?php 
 
         require_once('../data-base/bd.php');
-
         $nickname = filter_var(trim($_POST['user_nickname']), FILTER_SANITIZE_STRING);
         $password = filter_var(trim($_POST['user_password']), FILTER_SANITIZE_STRING);
         $respuesta = array('nick' => 'rechazado', 'password' => 'rechazado');
@@ -15,6 +14,8 @@
                 $consulta = $stmt->fetch_assoc();
                 if($consulta['user_password'] === $password){
                     $respuesta['password'] = 'aprobado';
+                    session_start();
+                    $_SESSION['loggin'] = true;
                 }else{
                     $respuesta['password'] = 'rechazado';
                 }

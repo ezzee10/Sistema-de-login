@@ -29,7 +29,7 @@ function readForm(e) {
 const registrarUsuario = (datos) => {
 
     const xhr = new XMLHttpRequest();
-    xhr.open("POST", `includes/modelos/registro.php`, true);
+    xhr.open("POST", `includes/modelos/validacion-registro.php`, true);
     xhr.onload = function () {
         if (this.status === 200 && xhr.readyState == 4) {
             console.log(JSON.parse(xhr.responseText));

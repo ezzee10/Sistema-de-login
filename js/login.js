@@ -20,15 +20,16 @@ function readForm(e) {
 const autenticarUsuario = (datos) => {
 
     const xhr = new XMLHttpRequest();
-    xhr.open("POST", `includes/modelos/login.php`, true);
+    xhr.open("POST", `includes/modelos/validacion-login.php`, true);
     xhr.onload = function () {
         if (this.status === 200 && xhr.readyState == 4) {
             const resultado = JSON.parse(xhr.responseText);
-
             if (resultado.nick == 'rechazado') {
                 mostrarNotificacion("El nombre de usuario no existe", "error");
             } else if (resultado.password == 'rechazado') {
                 mostrarNotificacion("La contraseña es incorrecta", "error");
+            } else {
+                window.location = "home.php";
             }
         } else {
             console.log("Algo salió mal");

@@ -1,3 +1,12 @@
+<?php
+    session_start();
+
+    if($_SESSION['loggin']){
+        header('location: home.php');
+    }
+
+?>
+
 <?php include 'layouts/header.php'?>
 
 <main class="container">
@@ -15,7 +24,7 @@
 
         <div class="start-session mg-top">
             <button type="submit" class="btn btn-start w-100">
-                <a href="home.php"> Iniciar sesión</a>
+                Iniciar sesión
             </button>
         </div>
 

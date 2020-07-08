@@ -1,3 +1,12 @@
+<?php
+    session_start();
+
+    if($_SESSION['loggin']){
+        header('location: home.php');
+    }
+
+?>
+
 <?php include 'layouts/header.php'?>
 
 <main class="container">
