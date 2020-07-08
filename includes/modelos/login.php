@@ -3,34 +3,25 @@
         require_once('../data-base/bd.php');
 
         $nickname = filter_var(trim($_POST['user_nickname']), FILTER_SANITIZE_STRING);
-        $email = filter_var(trim($_POST['user_email']), FILTER_SANITIZE_STRING);
         $password = filter_var(trim($_POST['user_password']), FILTER_SANITIZE_STRING);
-        $respuesta = array('nick' => '', 'correo'=> '');
+        $respuesta = array('nick' => 'rechazado', 'password' => 'rechazado');
 
         try{
-            //ANTES DE AGREGARLO A LA BD DEBO VERIFICAR QUE NO EXISTA
-            $stmt = $conn->query("SELECT id_user FROM usuario WHERE user_nickname = '$nickname' ");
+            //PRIMERO VERIFICO QUE EL NOMBRE DE USUARIO EXISTA EN LA BASE DE DATOS
+            $stmt = $conn->query("SELECT user_password FROM usuario WHERE user_nickname = '$nickname' ");
             if($stmt->num_rows == 1){
-                 $respuesta['nick'] = 'ocupado';
+                $respuesta['nick'] = 'aprobado';
+                //AHORA VERIFICO LA CONTRASEÑA
+                $consulta = $stmt->fetch_assoc();
+                if($consulta['user_password'] === $password){
+                    $respuesta['password'] = 'aprobado';
+                }else{
+                    $respuesta['password'] = 'rechazado';
+                }
             }else{
-                 $respuesta['nick'] = 'libre';
+                 $respuesta['nick'] = 'rechazado';
             }
             
-          //AHORA VERIFICO EL EMAIL
-          $stmt = $conn->query("SELECT id_user FROM usuario WHERE user_email = '$email' ");
-           if($stmt->num_rows == 1){
-                 $respuesta['correo'] = 'ocupado';
-            }else{
-                 $respuesta['correo'] = 'libre';
-           }        
-           
-          //SI ALGUN CAMPO ESTA VACIO ENTONCES NO INSERTO LOS DATOS EN LA BASE DE DATOS
-          
-          if(($respuesta['nick'] === 'libre') && ($respuesta['correo'] === 'libre')){
-                $stmt = $conn->prepare("INSERT INTO usuario (user_nickname, user_email, user_password) VALUES (?,?,?)");
-                $stmt->bind_param("sss", $nickname, $email, $password);
-                $stmt->execute();
-          }
           
           $conn->close();       
           }catch(Exception $e){

@@ -19,8 +19,13 @@
         </div>
         <div class="campo">
             <button type="submit" class="btn btn-submit">Registrarse</button>
+            <a href="index.php">Volver a iniciar sesión</a>
         </div>
     </form>
 </main>
 
-<?php include 'layouts/footer.php'?>
+</body>
+
+<script src="js/registro.js"></script>
+
+</html>

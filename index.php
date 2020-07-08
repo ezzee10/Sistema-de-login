@@ -1,28 +1,31 @@
 <?php include 'layouts/header.php'?>
 
 <main class="container">
-    <div class="content">
-        <div class="cell">
-            <div class="user">
-                <label for="user">Nombre de usuario</label>
-                <input class="h-50" type="text">
-            </div>
+
+    <form class="form content" id="form">
+        <div class="user">
+            <label for="user">Nombre de usuario</label>
+            <input class="h-50" type="text" id="nickname">
         </div>
-        <div class="cell">
-            <div class="password">
-                <label for="password">Contraseña</label>
-                <input class="h-50" type="password">
-            </div>
+
+        <div class="password mg-top">
+            <label for="password">Contraseña</label>
+            <input class="h-50" id="password" type="password">
         </div>
-        <div class="cell">
-            <div class="start-session">
-                <button type="button" class="btn btn-start w-100">Iniciar sesión</button>
-            </div>
-            <div class="new-account">
-                <button type="button" class="btn btn-login w-100">Crear una cuenta</button>
-            </div>
+
+        <div class="start-session mg-top">
+            <button type="submit" class="btn btn-start w-100">
+                <a href="home.php"> Iniciar sesión</a>
+            </button>
         </div>
-        <div class="cell">
+
+        <div class="new-account mg-top">
+            <button type="button" class="btn btn-login w-100">
+                <a href="formulario.php">Crear una cuenta</a>
+            </button>
+        </div>
+
+        <div class="footer-form mg-top">
             <div class="remember">
                 <input class="check" type="checkbox">
                 <p>Recordarme</p>
@@ -31,7 +34,12 @@
                 <a href="#">¿Olvidó la contraseña?</a>
             </div>
         </div>
-    </div>
+    </form>
+
 </main>
 
-<?php include 'layouts/footer.php'?>
+</body>
+
+<script src="js/login.js"></script>
+
+</html>
