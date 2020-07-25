@@ -11,26 +11,38 @@
 
 <main class="container">
 
-    <form class="form" id="form">
-        <h1>Registrarse</h1>
+    <form class="content" id="form">
+        <div class="campo">
+            <label for="user">Nombre de usuario:</label>
+            <input type="text" id="nickname">
+        </div>
 
         <div class="campo">
-            <input id="nickname" type="text" placeholder="Nombre de usuario">
+            <label for="email">Correo:</label>
+            <input id="email" type="email">
         </div>
+
         <div class="campo">
-            <input id="email" type="email" placeholder="Correo">
+            <label for="password">Contraseña:</label>
+            <input id="password" type="password">
         </div>
+
         <div class="campo">
-            <input id="password" type="password" placeholder="Contraseña">
+            <label for="password">Confirmar contraseña:</label>
+            <input id="password2" type="password">
         </div>
+
         <div class="campo">
-            <input id="password2" type="password" placeholder="Confirmar contraseña">
+            <button type="submit" class="btn">
+                Registrarse
+            </button>
         </div>
-        <div class="campo">
-            <button type="submit" class="btn btn-submit">Registrarse</button>
+
+        <div class="campo txt-center">
             <a href="index.php">Volver a iniciar sesión</a>
         </div>
     </form>
+
 </main>
 
 </body>
